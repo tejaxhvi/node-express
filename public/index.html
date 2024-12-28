@@ -1,0 +1,27 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+    <script>
+        async function sendRequest() {
+            const a = document.getElementById("a").value;
+            const b = document.getElementById("b").value;
+            await axios.post("https://27ecd125-6c52-405b-950c-90a9bb1b1694-00-16dwfsva0zqlu.sisko.replit.dev/sum", { // this sends req to replit backend
+                a: a,
+                b: b
+            }).then((response) => { // you can name anything not only response
+                document.getElementById('ans').innerHTML = response.data.ans;
+                document.getElementById('message').innerHTML = response.data.message;
+            })
+        }
+        // servers a folder over http
+    </script>
+</head>
+<body>
+    
+    <input id="a" type="text" placeholder="First value"></input>
+    <input id="b" type="text" placeholder="Second value"></input>
+
+    <button onclick="sendRequest()">Find sum</button>
+    <div id="message"></div>
+    <div id="ans"></div>
+
+</body>
