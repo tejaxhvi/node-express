@@ -27,6 +27,14 @@ app.post('/sum',function (req , res ) {
 
 })
 
+app.post('/calculus', function (req, res) {
+    let value1 = req.body.val
+    let value2 = req.body.val2
+
+    res.redirect('https://www.google.com')
+
+})
+
 
 function multiply(req, res , next) {
     let a = parseInt(req.body.a); // use query instead of body.x , this is post req not get
